@@ -9,7 +9,7 @@ def divide(a, b):
     return a / b
 
 def run_command(cmd):
-    # BUG: penggunaan shell=True berbahaya (Command Injection)
-    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    # FIX: Hilangkan shell=True agar aman dari Command Injection
+    result = subprocess.run(cmd, capture_output=True, text=True)
     return result.stdout
 
